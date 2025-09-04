@@ -1,10 +1,10 @@
 const form = document.getElementById('miFormulario');
 const inputs = form.querySelectorAll('.form-control, .form-check-input');
 
-// Validar campo
+
 function validarCampo(campo) {
   if (campo.type === "radio") {
-    // Validación para grupos de radio
+    
     const nombre = campo.name;
     const radios = document.querySelectorAll(`input[name="${nombre}"]`);
     let algunoMarcado = false;
@@ -23,7 +23,7 @@ function validarCampo(campo) {
       }
     });
   } else if (campo.tagName === "SELECT") {
-    // Validación para selects
+    
     if (campo.value === "") {
       campo.classList.remove('is-valid');
       campo.classList.add('is-invalid');
@@ -32,7 +32,7 @@ function validarCampo(campo) {
       campo.classList.add('is-valid');
     }
   } else {
-    // Validación para inputs normales
+    
     if (campo.value.trim() === "") {
       campo.classList.remove('is-valid');
       campo.classList.add('is-invalid');
@@ -43,12 +43,12 @@ function validarCampo(campo) {
   }
 }
 
-// Validar al salir del campo
+
 inputs.forEach(input => {
   input.addEventListener('blur', () => validarCampo(input));
 });
 
-// Guardar
+
 document.getElementById('guardar').addEventListener('click', () => {
   let faltan = [];
 
@@ -71,7 +71,7 @@ document.getElementById('guardar').addEventListener('click', () => {
   }
 });
 
-// Limpiar
+
 document.getElementById('limpiar').addEventListener('click', () => {
   inputs.forEach(input => {
     input.classList.remove('is-valid', 'is-invalid');
