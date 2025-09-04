@@ -4,18 +4,35 @@ const inputs = form.querySelectorAll('.form-control, .form-check-input');
 // Validar campo
 function validarCampo(campo) {
   if (campo.type === "radio") {
-    const radios = form.querySelectorAll(`input[name="${campo.name}"]`);
-    const algunoMarcado = Array.from(radios).some(r => r.checked);
-    radios.forEach(r => {
-      if (algunoMarcado) {
-        r.classList.add('is-valid');
-        r.classList.remove('is-invalid');
-      } else {
-        r.classList.add('is-invalid');
-        r.classList.remove('is-valid');
+    // Validación para grupos de radio
+    const nombre = campo.name;
+    const radios = document.querySelectorAll(`input[name="${nombre}"]`);
+    let algunoMarcado = false;
+    radios.forEach(radio => {
+      if (radio.checked) {
+        algunoMarcado = true;
       }
     });
+    radios.forEach(radio => {
+      if (algunoMarcado) {
+        radio.classList.remove('is-invalid');
+        radio.classList.add('is-valid');
+      } else {
+        radio.classList.remove('is-valid');
+        radio.classList.add('is-invalid');
+      }
+    });
+  } else if (campo.tagName === "SELECT") {
+    // Validación para selects
+    if (campo.value === "") {
+      campo.classList.remove('is-valid');
+      campo.classList.add('is-invalid');
+    } else {
+      campo.classList.remove('is-invalid');
+      campo.classList.add('is-valid');
+    }
   } else {
+    // Validación para inputs normales
     if (campo.value.trim() === "") {
       campo.classList.remove('is-valid');
       campo.classList.add('is-invalid');

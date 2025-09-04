@@ -16,42 +16,99 @@
         <div class="row mb-3">
           <div class="col">
             <label for="nombre" class="form-label">Nombre </label>
-            <input type="text" class="form-control" id="nombre" data-required="true" placeholder=" Ej: Pancrasio">
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                <input type="text" class="form-control" id="nombre" data-required="true" placeholder=" Ej: Pancrasio">
+            </div>
           </div>
-          <div class="col">
-            <label for="apellido" class="form-label">Apellido </label>
-            <input type="text" class="form-control" id="apellido" data-required="true" placeholder="Ej: Semental">
-          </div>
+
+            <div class="col">
+                <label for="apellido" class="form-label">Apellido </label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi-person-badge-fill"></i></span>
+                    <input type="text" class="form-control" id="apellido" data-required="true" placeholder="Ej: Semental">
+                </div>
+            </div>
         </div>
 
         <div class="mb-3">
           <label for="correo" class="form-label">Correo electrónico </label>
-          <input type="email" class="form-control" id="correo" data-required="true" placeholder="Ej: elsemental@gmail.com">
+          <div class="input-group">
+                <span class="input-group-text"><i class="bi-envelope-fill"></i></span>
+                <input type="email" class="form-control" id="correo" data-required="true" placeholder="Ej: elsemental@gmail.com">
+            </div>
         </div>
 
         <div class="mb-3">
           <label for="telefono" class="form-label">Teléfono </label>
-          <input type="tel" class="form-control" id="telefono" data-required="true" placeholder="+56 9 1234 5678">
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                <input type="tel" class="form-control" id="telefono" data-required="true" placeholder="+56 9 1234 5678">
+            </div>
         </div>
 
         <div class="mb-3">
           <label for="fecha" class="form-label">Fecha de nacimiento </label>
-          <input type="date" class="form-control" id="fecha" data-required="true">
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi-calendar-fill"></i></span>
+                <input type="date" class="form-control" id="fecha" data-required="true">
+            </div>
         </div>
 
         <div class="mb-3">
           <label for="pais" class="form-label">País </label>
-          <select class="form-control" id="pais" data-required="true">
-            <option value="">Seleccione un país</option>
-            <option>Chile</option>
-            <option>Argentina</option>
-            <option>Perú</option>
-            <option>México</option>
-          </select>
+          <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-globe"></i></span>
+                <select class="form-control" id="pais" data-required="true">
+                    <option value="">Seleccione un país</option>
+                    <option>Chile</option>
+                    <option>Argentina</option>
+                    <option>Perú</option>
+                    <option>México</option>
+                </select>
+            </div>
+        </div>
+        
+            <div class="mb-3">
+        <label for="ocupacion" class="form-label">Ocupación </label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person-workspace"></i></span>
+                <select class="form-control" id="ocupacion" data-required="true">
+                    <option value="">Seleccione su ocupación</option>
+                    <option>Estudiante</option>
+                    <option>Empleado</option>
+                    <option>Independiente</option>
+                    <option>Desempleado</option>
+                </select>
+            </div>
         </div>
 
+            <div class="mb-3">
+            <label for="empresa" class="form-label">Nombre de la empresa / institución</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi-building"></i></span>
+                    <input type="text" class="form-control" id="empresa" placeholder="Ejemplo: Universidad de Chile, Empresa X">
+                </div>
+            </div>
+
+            <div class="mb-3">
+        <label for="nivel" class="form-label">Nivel de estudios </label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-mortarboard-fill"></i></span>
+                    <select class="form-control" id="nivel" data-required="true">
+                        <option value="">Seleccione su nivel de estudios</option>
+                        <option>Básico</option>
+                        <option>Medio</option>
+                        <option>Técnico</option>
+                        <option>Universitario</option>
+                        <option>Postgrado</option>
+                    </select>
+                </div>
+            </div>
+
+
         <div class="mb-3">
-          <label class="form-label">Género </label><br>
+          <label class="form-label"><i class="bi bi-gender-ambiguous"></i> Género </label><br>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="genero" id="masculino" value="Masculino" data-required="true">
             <label class="form-check-label" for="masculino">Masculino</label>
@@ -61,14 +118,38 @@
             <label class="form-check-label" for="femenino">Femenino</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="genero" id="femenino" value="Femenino">
+            <input class="form-check-input" type="radio" name="genero" id="otro" value="otro">
             <label class="form-check-label" for="femenino">Otro</label>
           </div>
         </div>
 
+            <div class="mb-3">
+        <label class="form-label"><i class="bi bi-people-fill"></i> Estado Civil *</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="estado" id="soltero" value="soltero" data-required="true">
+            <label class="form-check-label" for="masculino">Soltero/a</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="estado" id="casado" value="casado">
+            <label class="form-check-label" for="femenino">Casado/a</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="estado" id="divorciado" value="Divorciado/a">
+            <label class="form-check-label" for="divorciado">Divorciado/a</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="estado" id="viudo" value="Viudo/a">
+            <label class="form-check-label" for="viudo">Viudo/a</label>
+        
+        </div>
+            </div>
+
         <div class="mb-3">
           <label for="mensaje" class="form-label">Mensaje</label>
-          <textarea class="form-control" id="mensaje" rows="3"></textarea>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-chat-text"></i></span>
+                <textarea class="form-control" id="mensaje" rows="3"></textarea>
+            </div>
         </div>
 
         <div class="d-flex justify-content-between">
@@ -80,6 +161,8 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
   <script src="script.js"></script>
 </body>
 </html>
