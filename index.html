@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formulario</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-card">
+      <h3 class="text-center mb-4">Formulario de Registro</h3>
+
+      <form id="miFormulario" novalidate>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="nombre" class="form-label">Nombre </label>
+            <input type="text" class="form-control" id="nombre" data-required="true" placeholder=" Ej: Pancrasio">
+          </div>
+          <div class="col">
+            <label for="apellido" class="form-label">Apellido </label>
+            <input type="text" class="form-control" id="apellido" data-required="true" placeholder="Ej: Semental">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="correo" class="form-label">Correo electrónico </label>
+          <input type="email" class="form-control" id="correo" data-required="true" placeholder="Ej: elsemental@gmail.com">
+        </div>
+
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Teléfono </label>
+          <input type="tel" class="form-control" id="telefono" data-required="true" placeholder="+56 9 1234 5678">
+        </div>
+
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Fecha de nacimiento </label>
+          <input type="date" class="form-control" id="fecha" data-required="true">
+        </div>
+
+        <div class="mb-3">
+          <label for="pais" class="form-label">País </label>
+          <select class="form-control" id="pais" data-required="true">
+            <option value="">Seleccione un país</option>
+            <option>Chile</option>
+            <option>Argentina</option>
+            <option>Perú</option>
+            <option>México</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Género </label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="genero" id="masculino" value="Masculino" data-required="true">
+            <label class="form-check-label" for="masculino">Masculino</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="genero" id="femenino" value="Femenino">
+            <label class="form-check-label" for="femenino">Femenino</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="genero" id="femenino" value="Femenino">
+            <label class="form-check-label" for="femenino">Otro</label>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" rows="3"></textarea>
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <button type="button" class="btn btn-success" id="guardar">Guardar</button>
+          <button type="reset" class="btn btn-secondary" id="limpiar">Limpiar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
